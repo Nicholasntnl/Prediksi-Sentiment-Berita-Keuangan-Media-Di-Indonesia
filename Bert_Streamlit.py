@@ -47,6 +47,7 @@ model.eval()
 def clean_text(text):
     # Menghapus angka, simbol, URL, dan tanda baca
     text = re.sub(r'\d+', '', text)
+    text = re.sub(r'\.com|\.id|\.co', '',regex=True)
     text = re.sub(r'https?\S+|www\.\S+', '', text)
     text = re.sub(r'\n', ' ', text)
     text = re.sub(r'[{}]+'.format(string.punctuation), '', text)
